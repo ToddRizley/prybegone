@@ -17,21 +17,24 @@ class PryBeGone
     end
   end
 
-def run
-
-  self.welcome
-  self.get_user_input
-
-  if @user_input.downcase == "comment-out"
-    self.search_and_change("binding.pry", "#binding.pry")
-   
-  elsif @user_input.downcase == "remove"
-    self.search_and_change("binding.pry", "")
-      
-  elsif @user_input.downcase == "comment-in"
-    self.search_and_change("#binding.pry", "binding.pry")
+  def logic
+    if @user_input.downcase == "comment-out"
+      self.search_and_change("binding.pry", "#binding.pry")
+     
+    elsif @user_input.downcase == "remove"
+      self.search_and_change("binding.pry", "")
+        
+    elsif @user_input.downcase == "comment-in"
+      self.search_and_change("#binding.pry", "binding.pry")
+    end
   end
-end
+
+
+  def run
+    self.welcome
+    self.get_user_input
+    self.logic
+  end
 end
 
 
