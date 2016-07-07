@@ -19,7 +19,9 @@ class PryBeGone
 
   def logic
     if @user_input.downcase == "comment-out"
-      self.search_and_change("binding.pry", "#binding.pry")
+      self.search_and_change("\nbinding.pry", "#binding.pry")
+      self.search_and_change(" binding.pry", "#binding.pry")
+
      
     elsif @user_input.downcase == "remove"
       self.search_and_change("binding.pry", "")
