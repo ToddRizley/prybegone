@@ -8,7 +8,7 @@ class PryBeGone
   end
 
   def search_and_change(arg1, arg2)
-    Dir.glob('**/*.rb').each do |file|
+    Dir.glob('**/**.rb').each do |file|
       if file != 'lib1.rb'
         text = File.read(file) 
         content = text.gsub("#{arg1}", "#{arg2}")
@@ -19,12 +19,12 @@ class PryBeGone
 
   def logic
     if @user_input.downcase == "comment-out"
-      self.search_and_change("\nbinding.pry", "#binding.pry")
-      self.search_and_change(" binding.pry", "#binding.pry")
-
+       self.search_and_change(" binding.pry", "#binding.pry")
+      self.search_and_change("\nbinding.pry", "\n#binding.pry")
      
     elsif @user_input.downcase == "remove"
-      self.search_and_change("binding.pry", "")
+      self.search_and_change(" binding.pry", "")
+      self.search_and_change("\nbinding.pry", "\n")
         
     elsif @user_input.downcase == "comment-in"
       self.search_and_change("#binding.pry", "binding.pry")
