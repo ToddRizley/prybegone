@@ -1,4 +1,0 @@
-   #binding.pry
-
-
-  #binding.pry
