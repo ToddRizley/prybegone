@@ -1,0 +1,4 @@
+require 'prybegone'
+
+pbg = Prybegone.new
+pbg.run
