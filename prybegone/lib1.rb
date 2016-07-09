@@ -1,11 +1,6 @@
 class PryBeGone
-  def welcome
-  puts "Welcome to pry-be-gone! Would you like to remove or comment-out all binding.pry statements? (remove/comment)"
-  end
 
-  def get_user_input
-     @user_input = gets.chomp
-  end
+@@input_flag = ARGV
 
   def search_and_change(arg1, arg2)
     Dir.glob('**/**.rb').each do |file|
@@ -17,27 +12,22 @@ class PryBeGone
     end
   end
 
-  def logic
-    if @user_input.downcase == "comment-out"
+  def run
+    if @@input_flag.include?("-co")
        self.search_and_change(" binding.pry", "#binding.pry")
       self.search_and_change("\nbinding.pry", "\n#binding.pry")
      
-    elsif @user_input.downcase == "remove"
+    elsif @@input_flag.include?("-r")
       self.search_and_change(" binding.pry", "")
       self.search_and_change("\nbinding.pry", "\n")
         
-    elsif @user_input.downcase == "comment-in"
+    elsif @@input_flag.include?("-ci")
       self.search_and_change("#binding.pry", "binding.pry")
+      self.search_and_change("\n#binding.pry", "\nbinding.pry")
     end
   end
-
-
-  def run
-    self.welcome
-    self.get_user_input
-    self.logic
-  end
 end
+
 
 
 
