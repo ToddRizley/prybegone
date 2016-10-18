@@ -1,5 +1,5 @@
-# require "prybegone/version"
-require 'pry'
+require "prybegone/version"
+
   class PryBeGone
 
     @@input_flag = ARGV
