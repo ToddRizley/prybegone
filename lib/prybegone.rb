@@ -1,4 +1,4 @@
-require "prybegone/version"
+# require "prybegone/version"
 
   class PryBeGone
 
@@ -36,5 +36,5 @@ require "prybegone/version"
   end
 
 
-pbg = PryBeGone.new
-pbg.run
+# pbg = PryBeGone.new
+# pbg.run

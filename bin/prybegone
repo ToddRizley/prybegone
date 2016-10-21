@@ -1,4 +1,6 @@
+#!/usr/bin/env ruby
+
 require 'prybegone'
 
-pbg = Prybegone.new
+pbg = PryBeGone.new
 pbg.run
