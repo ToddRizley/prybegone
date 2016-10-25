@@ -28,7 +28,7 @@ Use the following commands in the command line to disable, activate or remove al
 ```ruby
   prybegone -ci
 ```
-#### Remove both active bindings
+#### Remove active bindings
 ```ruby
   prybegone -r
 ```
