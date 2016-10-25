@@ -18,16 +18,17 @@ Or install it yourself as:
 
 
 ## Usage
+Use the following commands in the command line to disable, activate or remove all pry bindings within the codebase.
 
-### Comment out all active bindings
+#### Comment out all active bindings
 ```ruby
   prybegone -co
 ```
-### Activate all disabled bindings
+#### Activate all disabled bindings
 ```ruby
   prybegone -ci
 ```
-### Remove both active and disabled bindings
+#### Remove both active and disabled bindings
 ```ruby
   prybegone -r
 ```
